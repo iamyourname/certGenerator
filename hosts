@@ -1,0 +1,16 @@
+mn-basisbalancer001.basis-prod-portal.cloud.vimpelcom.ru
+balancerbasisapp.basis.cloud.vimpelcom.ru
+test-linux-balance.srms-test-linux.cloud.vimpelcom.ru
+test-linux-app3.srms-test-linux.cloud.vimpelcom.ru
+test-linux-app2.srms-test-linux.cloud.vimpelcom.ru
+cert_auto: mn-srmsapp004.basis-test-portal.cloud.vimpelcom.ru
+cert_auto: mn-basisbalancer003.basis-test-portal.cloud.vimpelcom.ru
+cert_auto: mn-srmsapp003.basis-prod-portal.cloud.vimpelcom.ru
+cert_auto: mn-basisapp004.prodlike-basis.cloud.vimpelcom.ru
+cert_auto: mn-basisapp003.prodlike-basis.cloud.vimpelcom.ru
+cert_auto: mn-basisapp002.basis.cloud.vimpelcom.ru
+cert_auto: mn-basisapp001.basis.cloud.vimpelcom.ru
+cert_auto: dr-srmsapp003.basis-prod-portal.cloud.vimpelcom.ru
+cert_auto: dr-basisapp001.basis.cloud.vimpelcom.ru
+cert_auto: basis-portal.srms-test-linux.cloud.vimpelcom.ru
+cert_auto: balancerbasisapp002.prodlike-basis.cloud.vimpelcom.ru
