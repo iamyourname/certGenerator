@@ -1,0 +1,4 @@
+создание файла запроса + файла зашифрованного закрытого ключа - 
+openssl req -new -batch -config /some/folder/ssl-mn3.conf -keyout /some/folder/ssl-mn3.key -out /some/folder/ssl-mn3.csr
+расшифровака файла зашифрованного закрытого ключа - 
+openssl pkcs8 -topk8 -nocrypt -in /some/folder/ssl-mn3.key -out /some/folder/ssl-mn3.pem
