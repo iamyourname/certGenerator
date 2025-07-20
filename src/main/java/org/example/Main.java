@@ -2,6 +2,9 @@ package org.example;
 
 import java.util.Scanner;
 
+import static org.example.InitClass.getHostsByEnv;
+import static org.example.InitClass.readHosts;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -23,14 +26,58 @@ public class Main {
         return scanner.nextInt();
     }
 
+    public static void displayHosts(String env){
+
+        String[] hosts = getHostsByEnv(env).split(",");
+        for(int i = 1; i < hosts.length; i++){
+            System.out.println(i+". "+hosts[i]);
+        }
+        Scanner host = new Scanner(System.in);
+        System.out.print("Выберите хост: ");
+        String hostName = host.nextLine();
+
+        switch(hostName){
+
+        }
+
+    }
+
+    public static void displayEnv(){
+        System.out.println("1. SRMS-PROD");
+        System.out.println("2. SRMS-TEST-LINUX");
+        System.out.println("3. SRMS-TEST-PORTAL");
+        System.out.println("4. SRMS-PROD-PORTAL");
+        System.out.println("5. SRMS-TEST-NT");
+        System.out.println("6. SRMS-DEV");
+        System.out.println("7. SRMS-PRODLIKE");
+        System.out.print("Выберите среду: ");
+    }
+
     private static void generateRequestFile() {
         //System.out.println("You selected Option One.");
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        Scanner crq = new Scanner(System.in);
-        System.out.print("Enter CRQ number: ");
-        String crqNumber = crq.nextLine();
-        System.out.println(crqNumber);
+        String envName="";
+        Scanner env = new Scanner(System.in);
+        displayEnv();
+        String envNumber = env.nextLine();
+        switch (envNumber) {
+            case "1": envName = "SRMS-PROD";
+                break;
+            case "2": envName = "SRMS-TEST-LINUX";
+                break;
+            case "3": envName = "SRMS-TEST-PORTAL";
+                break;
+            case "4": envName = "SRMS-PROD-PORTAL";
+                break;
+            case "5": envName = "SRMS-TEST-NT";
+                break;
+            case "6": envName = "SRMS-DEV";
+                break;
+            case "7": envName = "SRMS-PRODLIKE";
+                break;
+        }
+        displayHosts(envName);
         // Add specific logic for Option One here
     }
 
@@ -43,6 +90,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
+
+        readHosts();
 
         while (running) {
             displayMenu();

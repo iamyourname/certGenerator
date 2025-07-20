@@ -8,11 +8,25 @@
 	
 		сценарий "создать"
 
-		укажите номер CRQ:
+
 		выберите среду:
-			1. SRMS-PROD
-			2. SRMS-PRODLIKE
-			3. SRMS-
-				....
+			SRMS-PROD
+            SRMS-TEST-LINUX
+            SRMS-TEST-PORTAL
+            SRMS-PROD-PORTAL
+            SRMS-TEST-NT
+            SRMS-DEV
+            SRMS-PRODLIKE
+
+        Выберите хост
+            1.
+            2.
+            3. ....
+
+
+        Укажите CRQ: ....
+
+        Готово.
+
 
 		

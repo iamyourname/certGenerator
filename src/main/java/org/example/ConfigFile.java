@@ -41,7 +41,7 @@ public class ConfigFile {
          */
 
 
-    public static void configFileGeneration(String CRQ, String server){
+    public static void configFileGeneration(String CRQ, String server, String serverCut){
 
 
         String configBody = "[ req ]\n" +
@@ -55,7 +55,7 @@ public class ConfigFile {
                 "        countryName_max                 = 2\n" +
                 "        countryName_default             = RU\n" +
                 "        stateOrProvinceName             = State or Province Name (full name)\n" +
-                "        stateOrProvinceName_default     = CRQ279775\n" +
+                "        stateOrProvinceName_default     = "+CRQ+"\n" +
                 "        localityName                    = Locality Name (eg, city)\n" +
                 "        localityName_default            = Moscow\n" +
                 "        organizationName                = Organization Name (eg, company)\n" +
@@ -74,8 +74,8 @@ public class ConfigFile {
                 "        subjectAltName = @subject_alternative_name_section\n" +
                 "\n" +
                 "        [ subject_alternative_name_section ]\n" +
-                "        DNS.1   = basis-portal.srms-test-linux.cloud.vimpelcom.ru\n" +
-                "        DNS.2   = basis-portal";
+                "        DNS.1   = "+server+"\n" +
+                "        DNS.2   = "+serverCut+"\n";
 
 
 
