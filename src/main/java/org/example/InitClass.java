@@ -7,7 +7,7 @@ import java.io.IOException;
 public class InitClass {
 
 
-    public static String[][] hostEnv = new String[29][2];
+    public static String[][] hostEnv = new String[29][4];
     public static void readHosts(){
         BufferedReader reader;
         try {
@@ -16,8 +16,10 @@ public class InitClass {
             int i = 0;
             while (line != null) {
                 String[] parts = line.split(":");
-                hostEnv[i][0] = parts[0];
-                hostEnv[i][1] = parts[1];
+                hostEnv[i][0] = parts[0]; // host name
+                hostEnv[i][1] = parts[1]; // env
+                hostEnv[i][2] = parts[2]; // env ID
+                hostEnv[i][3] = parts[3]; // host env id
                 i++;
                 // read next line
                 line = reader.readLine();
@@ -42,6 +44,24 @@ public class InitClass {
         }
 
         return response;
+    }
+
+    public static String selectHostByEnv(String envID, String hostID){
+
+        for(int i = 0; i < hostEnv.length; i++){
+            if(hostEnv[i][2].equals(envID) && hostEnv[i][3].equals(hostID)){
+                return hostEnv[i][0];
+            }
+        }
+
+        return null;
+    }
+
+    public static void userInput(String host, String crq){
+
+        System.out.println("Выбранный хост: "+host);
+        System.out.println("Номер CRQ: CRQ"+crq);
+
     }
 
 

@@ -2,12 +2,14 @@ package org.example;
 
 import java.util.Scanner;
 
-import static org.example.InitClass.getHostsByEnv;
-import static org.example.InitClass.readHosts;
+import static org.example.InitClass.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+
+    public static String userHost;
+    public static String userCrq;
 
     private static void displayMenu() {
         System.out.println("--- CRQ Cert Generator ---");
@@ -26,19 +28,22 @@ public class Main {
         return scanner.nextInt();
     }
 
-    public static void displayHosts(String env){
+    public static void displayHosts(String envName, String envID){
 
-        String[] hosts = getHostsByEnv(env).split(",");
+        String[] hosts = getHostsByEnv(envName).split(",");
         for(int i = 1; i < hosts.length; i++){
             System.out.println(i+". "+hosts[i]);
         }
         Scanner host = new Scanner(System.in);
         System.out.print("Выберите хост: ");
         String hostName = host.nextLine();
+        userHost=selectHostByEnv(envID,hostName);
+       // System.out.println(userHost);
+        Scanner crq = new Scanner(System.in);
+        System.out.print("Введите CRQ: ");
+        userCrq = crq.nextLine();
 
-        switch(hostName){
-
-        }
+        userInput(userHost,userCrq);
 
     }
 
@@ -77,7 +82,7 @@ public class Main {
             case "7": envName = "SRMS-PRODLIKE";
                 break;
         }
-        displayHosts(envName);
+        displayHosts(envName, envNumber);
         // Add specific logic for Option One here
     }
 
